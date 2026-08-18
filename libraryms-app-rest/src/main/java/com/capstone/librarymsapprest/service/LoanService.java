@@ -14,6 +14,7 @@ public class LoanService {
     private LoanRepository loanRepository;
 
     public List<Loan> getAllLoans() {
+        
         return loanRepository.findAll();
     }
 

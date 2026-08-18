@@ -14,7 +14,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
     //    Request: GET /ping
-//    Response: "Up"
+    //   Response: "Up"
     @GetMapping("/ping")
     public String ping(){
         return "Up -books";
@@ -67,7 +67,7 @@ public class BookController {
   */
 
     @PutMapping("/book/{id}")
-    Book updateBookById(@RequestBody Book newBook, @PathVariable Long id) {
+    public Book updateBookById(@RequestBody Book newBook, @PathVariable Long id) {
 
         return bookRepository.findById(id).map(book -> {
             book.setTitle(newBook.getTitle());
